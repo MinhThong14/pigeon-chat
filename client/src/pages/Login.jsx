@@ -13,6 +13,13 @@ function Login() {
         username: "",
         password: "",
     })
+
+    useEffect(() => {
+      if (localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
+        navigate("/");
+      }
+    }, []);
+
     const toastOptions = {
       position: "bottom-right",
       autoClose: 8000,
